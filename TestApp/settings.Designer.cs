@@ -35,10 +35,8 @@
             // 
             // text_label
             // 
-            this.text_label.AutoSize = true;
-            this.text_label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.text_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F);
-            this.text_label.Location = new System.Drawing.Point(0, 0);
+            this.text_label.Location = new System.Drawing.Point(212, 162);
             this.text_label.Name = "text_label";
             this.text_label.Size = new System.Drawing.Size(331, 95);
             this.text_label.TabIndex = 0;
@@ -58,7 +56,6 @@
             this.Name = "settings";
             this.Text = "settings";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

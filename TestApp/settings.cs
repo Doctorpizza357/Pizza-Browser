@@ -21,14 +21,6 @@ namespace TestApp
         private void timer1_Tick(object sender, EventArgs e)
         {
 
-            // 1. Obtain the current application process
-            Process currentProcess = Process.GetCurrentProcess();
-
-            // 2. Obtain the used memory by the process
-            long usedMemory = currentProcess.PrivateMemorySize64;
-
-            // 3. Display value
-            text_label.Text = "Memory " + usedMemory.ToString();
         }
     }
 }
