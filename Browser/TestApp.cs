@@ -4,11 +4,11 @@ using EasyTabs;
 
 namespace TestApp
 {
-    public partial class TestApp : TitleBarTabs
+	public partial class TestApp : TitleBarTabs
     {
         public TestApp()
         {
-            //InitializeComponent();
+            InitializeComponent();
 
             AeroPeekEnabled = true;
             TabRenderer = new ChromeTabRenderer(this);
@@ -21,7 +21,7 @@ namespace TestApp
             // when you try to "snapshot" the web browser control.  If you don't plan on using Aero peek, remove this method.
             CefSettings cefSettings = new CefSettings();
             cefSettings.DisableGpuAcceleration();
-            cefSettings.CachePath = "Cache";
+
             Cef.Initialize(cefSettings);
         }
 

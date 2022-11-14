@@ -15,20 +15,20 @@ namespace TestApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-			TestApp testApp = new TestApp();
-	        
-			testApp.Tabs.Add(
-		        new TitleBarTab(testApp)
-			        {
-				        Content = new TabWindow
-					                  {
-						                  Text = "New Tab"
-					                  }
-			        });
-			testApp.SelectedTabIndex = 0;
+            TestApp testApp = new TestApp();
 
-			TitleBarTabsApplicationContext applicationContext = new TitleBarTabsApplicationContext();
-			applicationContext.Start(testApp);
+            testApp.Tabs.Add(
+                new TitleBarTab(testApp)
+                {
+                    Content = new TabWindow
+                    {
+                        Text = "New Tab"
+                    }
+                });
+            testApp.SelectedTabIndex = 0;
+
+            TitleBarTabsApplicationContext applicationContext = new TitleBarTabsApplicationContext();
+            applicationContext.Start(testApp);
 
             Application.Run(applicationContext);
         }

@@ -8,13 +8,11 @@ using System.Windows.Forms;
 using CefSharp;
 using CefSharp.WinForms;
 using EasyTabs;
-using System.Diagnostics;
 
 namespace TestApp
 {
     public partial class TabWindow : Form
     {
-
         private class NewTabLifespanHandler : ILifeSpanHandler
         {
             private TabWindow _tab;
@@ -107,10 +105,9 @@ namespace TestApp
         {
             InitializeComponent();
 
-            
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
-            WebBrowser = new ChromiumWebBrowser("google.com")
+            WebBrowser = new ChromiumWebBrowser("about:blank")
             {
                 Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right,
                 Location = new Point(0, 38),
@@ -194,10 +191,6 @@ namespace TestApp
             {
                 Invoke(new Action(() => Icon = Resources.DefaultIcon));
             }
-            if (urlTextBox.Text == "pizza://settings")
-            {
-                Application.Run(new settings());
-            }
         }
 
         private void backButton_MouseEnter(object sender, EventArgs e)
@@ -245,11 +238,6 @@ namespace TestApp
         }
 
         private void TabWindow_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-        }
-
-        private void urlTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }
