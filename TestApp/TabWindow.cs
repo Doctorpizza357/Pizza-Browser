@@ -9,6 +9,8 @@ using CefSharp;
 using CefSharp.WinForms;
 using EasyTabs;
 using System.Diagnostics;
+using CefSharp.Example;
+using CefSharp.Example.Handlers;
 
 namespace TestApp
 {
@@ -126,6 +128,7 @@ namespace TestApp
             WebBrowser.TitleChanged += WebBrowser_TitleChanged;
             WebBrowser.AddressChanged += WebBrowser_AddressChanged;
             WebBrowser.LoadingStateChanged += webBrowser_DocumentCompleted;
+            WebBrowser.DownloadHandler = new DownloadHandler();
         }
 
         private void WebBrowser_AddressChanged(object sender, AddressChangedEventArgs e)
@@ -250,6 +253,11 @@ namespace TestApp
         }
 
         private void urlTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TabWindow_Load(object sender, EventArgs e)
         {
 
         }
