@@ -129,6 +129,7 @@ namespace TestApp
             WebBrowser.AddressChanged += WebBrowser_AddressChanged;
             WebBrowser.LoadingStateChanged += webBrowser_DocumentCompleted;
             WebBrowser.DownloadHandler = new DownloadHandler();
+            WebBrowser.MenuHandler = new MenuHandler(); 
         }
 
         private void WebBrowser_AddressChanged(object sender, AddressChangedEventArgs e)
