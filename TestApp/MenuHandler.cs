@@ -5,6 +5,7 @@ using System.Drawing.Imaging;
 using System.Drawing;
 using System.IO;
 using System.Diagnostics;
+using CefSharp.WinForms;
 
 public class MenuHandler : IContextMenuHandler
 {
@@ -93,6 +94,7 @@ public class MenuHandler : IContextMenuHandler
             captureGraphics.CopyFromScreen(captureRectangle.Left, captureRectangle.Top, 0, 0, captureRectangle.Size);
             captureBitmap.Save(@"C:\tmp\capture" + filenumber + ".jpeg", ImageFormat.Jpeg);
             Process.Start(@"C:\tmp\capture" + filenumber + ".jpeg");
+            
         }
     
         return false;
