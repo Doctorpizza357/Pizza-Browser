@@ -1,6 +1,10 @@
 ﻿using System;
 using CefSharp;
 using System.Windows.Forms;
+using System.Drawing.Imaging;
+using System.Drawing;
+using System.IO;
+using System.Diagnostics;
 
 public class MenuHandler : IContextMenuHandler
 {
@@ -10,7 +14,9 @@ public class MenuHandler : IContextMenuHandler
         //
         //model.Clear();
 
-        Console.WriteLine("Context menu opened !");
+        
+
+        //Console.WriteLine("Context menu opened !");
 
         // You can add a separator in case that there are more items on the list
         if (model.Count > 0)
@@ -30,6 +36,12 @@ public class MenuHandler : IContextMenuHandler
         model.AddItem((CefMenuCommand)26503, "Set 100% zoom");
         model.AddItem((CefMenuCommand)26504, "Set 50% zoom");
         model.AddItem((CefMenuCommand)26505, "Set 150% zoom");
+
+        model.AddSeparator();
+
+        model.AddItem((CefMenuCommand)26506, "Screenshot");
+
+        
     }
 
 
@@ -69,6 +81,20 @@ public class MenuHandler : IContextMenuHandler
             return true;
         }
 
+        int filenumber = 0;
+
+        if (commandId == (CefMenuCommand)26506)
+        {
+            filenumber += 1;
+            Bitmap captureBitmap = new Bitmap(1920, 1080, PixelFormat.Format32bppArgb);
+            System.Threading.Thread.Sleep(1000);
+            Rectangle captureRectangle = Screen.AllScreens[0].Bounds;
+            Graphics captureGraphics = Graphics.FromImage(captureBitmap);
+            captureGraphics.CopyFromScreen(captureRectangle.Left, captureRectangle.Top, 0, 0, captureRectangle.Size);
+            captureBitmap.Save(@"C:\tmp\capture" + filenumber + ".jpeg", ImageFormat.Jpeg);
+            Process.Start(@"C:\tmp\capture" + filenumber + ".jpeg");
+        }
+    
         return false;
     }
 

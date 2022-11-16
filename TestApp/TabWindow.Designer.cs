@@ -151,6 +151,7 @@
             this.Text = "TabWindow";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TabWindow_FormClosing);
             this.Load += new System.EventHandler(this.TabWindow_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TabWindow_KeyDown);
             this.toolbarBackground.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.forwardButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.backButton)).EndInit();

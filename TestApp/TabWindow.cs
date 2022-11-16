@@ -262,5 +262,13 @@ namespace TestApp
         {
 
         }
+
+        private void TabWindow_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.N)
+            {
+                //WebBrowser.ShowDevTools();
+            }
+        }
     }
 }
