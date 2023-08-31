@@ -31,7 +31,7 @@ namespace TestApp
                 Content = new TabWindow
                 {
                     // title given to the "new tab" page when you click the + button, or with keyboard shortcut when added
-                    Text = "New Tab"
+                    Text = "New Pizza Tab"
                 }
             };
         }
